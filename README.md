@@ -77,7 +77,3 @@ Ao executar o programa, escolha `1` para cadastrar um herói. Depois informe os 
 - As responsabilidades foram separadas entre `model`, `service` e `ui`.
 - Entradas numéricas e campos obrigatórios são validados no menu.
 - Há comentários em português nos pontos em que a regra de negócio ou o conceito de OO precisa de explicação.
-
-## Entregáveis
-
-O repositório contém o código-fonte completo e o arquivo `Arcadia-Heroes-Academy-Report.pdf`, com a descrição do sistema, os conceitos de OO utilizados e uma captura de execução.
