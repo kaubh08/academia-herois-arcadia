@@ -9,7 +9,7 @@ import com.arcadia.heroes.service.HeroAcademy;
 
 import java.util.Scanner;
 
-/** Console user interface for the academy. */
+/** Interface de console responsável pela interação da pessoa usuária com a academia. */
 public final class ConsoleMenu {
     private final HeroAcademy academy;
     private final Scanner scanner = new Scanner(System.in);

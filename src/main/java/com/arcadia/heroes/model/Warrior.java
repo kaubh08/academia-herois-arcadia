@@ -1,6 +1,6 @@
 package com.arcadia.heroes.model;
 
-/** A durable melee hero. */
+/** Herói de combate corpo a corpo, com foco em força e resistência. */
 public final class Warrior extends Hero {
     private final int strength;
     private final int resistance;

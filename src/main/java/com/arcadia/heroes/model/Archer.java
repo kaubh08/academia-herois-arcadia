@@ -1,6 +1,6 @@
 package com.arcadia.heroes.model;
 
-/** A ranged hero with accurate attacks. */
+/** Herói de longo alcance, com foco em precisão, agilidade e concentração. */
 public final class Archer extends Hero {
     private final int precision;
     private final int agility;

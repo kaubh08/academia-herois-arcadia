@@ -1,6 +1,6 @@
 package com.arcadia.heroes.model;
 
-/** Represents a mission a hero can start and complete. */
+/** Representa uma missão que pode ser iniciada e concluída por um herói. */
 public final class Mission {
     private final String name;
     private final String difficulty;

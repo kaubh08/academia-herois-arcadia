@@ -3,7 +3,7 @@ package com.arcadia.heroes;
 import com.arcadia.heroes.service.HeroAcademy;
 import com.arcadia.heroes.ui.ConsoleMenu;
 
-/** Application entry point. */
+/** Ponto de entrada da aplicação. */
 public final class Application {
     private Application() {
     }

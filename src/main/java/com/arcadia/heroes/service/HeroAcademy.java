@@ -8,11 +8,11 @@ import com.arcadia.heroes.model.Warrior;
 
 import java.util.Locale;
 
-/** Coordinates hero registration, missions, and report calculations. */
+/** Centraliza as regras de cadastro de heróis, missões e cálculos do relatório. */
 public final class HeroAcademy {
     public static final int MAX_HEROES = 20;
 
-    // Fixed-size array required by the assignment; it stores at most 20 heroes.
+    // Vetor de tamanho fixo exigido pela atividade: armazena no máximo 20 heróis.
     private final Hero[] heroes = new Hero[MAX_HEROES];
     private int heroCount;
     private int completedMissions;
@@ -65,7 +65,7 @@ public final class HeroAcademy {
         return result;
     }
 
-    /** Builds the final report using the polymorphic Hero array. */
+    /** Monta o relatório final usando o vetor polimórfico de heróis. */
     public String createKingdomReport() {
         int warriors = 0;
         int mages = 0;

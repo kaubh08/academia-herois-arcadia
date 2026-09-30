@@ -1,6 +1,6 @@
 package com.arcadia.heroes.model;
 
-/** Base abstraction shared by every hero class. */
+/** Abstração-base que reúne os atributos e comportamentos comuns a todos os heróis. */
 public abstract class Hero {
     private final String name;
     private final int level;
@@ -47,12 +47,12 @@ public abstract class Hero {
         activeMission = null;
     }
 
-    /** First overloaded attack operation: a basic attack without a target. */
+    /** Primeira sobrecarga de ataque: realiza um ataque básico sem alvo definido. */
     public String attack() {
         return name + " realiza um ataque básico.";
     }
 
-    /** Second overloaded attack operation: an attack directed at another hero. */
+    /** Segunda sobrecarga de ataque: direciona o ataque para outro herói. */
     public String attack(Hero target) {
         return name + " ataca " + target.getName() + ".";
     }

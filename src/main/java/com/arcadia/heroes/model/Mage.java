@@ -1,6 +1,6 @@
 package com.arcadia.heroes.model;
 
-/** A hero specialized in magic. */
+/** Herói especializado em magia, poder mágico e inteligência. */
 public final class Mage extends Hero {
     private final int magicPower;
     private final int intelligence;
