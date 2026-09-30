@@ -12,6 +12,7 @@ import java.util.Locale;
 public final class HeroAcademy {
     public static final int MAX_HEROES = 20;
 
+    // Fixed-size array required by the assignment; it stores at most 20 heroes.
     private final Hero[] heroes = new Hero[MAX_HEROES];
     private int heroCount;
     private int completedMissions;
@@ -64,6 +65,7 @@ public final class HeroAcademy {
         return result;
     }
 
+    /** Builds the final report using the polymorphic Hero array. */
     public String createKingdomReport() {
         int warriors = 0;
         int mages = 0;

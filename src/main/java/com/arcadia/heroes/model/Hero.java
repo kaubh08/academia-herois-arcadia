@@ -47,10 +47,12 @@ public abstract class Hero {
         activeMission = null;
     }
 
+    /** First overloaded attack operation: a basic attack without a target. */
     public String attack() {
         return name + " performs a basic attack.";
     }
 
+    /** Second overloaded attack operation: an attack directed at another hero. */
     public String attack(Hero target) {
         return name + " attacks " + target.getName() + ".";
     }

@@ -1,28 +1,46 @@
-# Arcadia Heroes Academy
+# Academia de Heróis de Arcádia
 
-Console application developed in Java 17 and Maven to manage heroes, missions, and the kingdom report.
+Aplicação de console desenvolvida em Java 17 com Maven para gerenciar heróis, missões e o relatório final do reino.
 
-## Requirements
+## Pré-requisitos
 
-- JDK 17 or newer
-- Maven 3.9 or newer
+- JDK 17 ou superior
+- Maven 3.9 ou superior
 
-## Run in IntelliJ IDEA
+## Como executar no IntelliJ IDEA
 
-1. Select **File > Open** and choose this folder (the one containing `pom.xml`).
-2. Trust the project and let IntelliJ import Maven dependencies.
-3. Run `com.arcadia.heroes.Application`.
+1. Selecione **File > Open** e escolha esta pasta (a que contém o arquivo `pom.xml`).
+2. Confirme a abertura do projeto e aguarde a importação do Maven.
+3. Execute a classe `com.arcadia.heroes.Application`.
 
-## Run in a terminal
+## Como executar pelo terminal
 
 ```bash
 mvn compile
 java -cp target/classes com.arcadia.heroes.Application
 ```
 
-## Design notes
+## Funcionalidades
 
-- `Hero[]` is a fixed array with a capacity of 20, as required.
-- `Hero` is abstract and `Warrior`, `Mage`, and `Archer` extend it.
-- Polymorphism is used to display details, calculate strength, and use abilities.
-- `attack()` is overloaded and subclass ability methods are overridden.
+- Cadastro de até 20 heróis em um vetor (`Hero[]`).
+- Listagem dos heróis cadastrados.
+- Busca de herói pelo nome.
+- Estatísticas gerais e relatório final do reino.
+- Missões com nome, dificuldade, recompensa em ouro, início e conclusão.
+- Classes de personagem: Guerreiro (`Warrior`), Mago (`Mage`) e Arqueiro (`Archer`).
+
+## Conceitos de orientação a objetos
+
+- Encapsulamento com atributos privados e métodos de acesso controlado.
+- Abstração por meio da classe abstrata `Hero`.
+- Herança: `Warrior`, `Mage` e `Archer` estendem `Hero`.
+- Polimorfismo no vetor de heróis e nos métodos sobrescritos.
+- Sobrescrita de `calculateStrength()` e `useSpecialAbility()` nas subclasses.
+- Sobrecarga dos métodos `attack()` e `attack(Hero target)`.
+
+## Convenções do projeto
+
+- Pastas, pacotes e nomes técnicos estão em inglês.
+- Classes usam `PascalCase`.
+- Variáveis, atributos e métodos usam `camelCase`.
+- O código está separado por responsabilidade nos pacotes `model`, `service` e `ui`.
