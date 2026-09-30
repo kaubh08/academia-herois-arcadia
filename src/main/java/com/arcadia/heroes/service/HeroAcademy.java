@@ -6,8 +6,6 @@ import com.arcadia.heroes.model.Mage;
 import com.arcadia.heroes.model.Mission;
 import com.arcadia.heroes.model.Warrior;
 
-import java.util.Locale;
-
 /** Centraliza as regras de cadastro de heróis, missões e cálculos do relatório. */
 public final class HeroAcademy {
     public static final int MAX_HEROES = 20;
