@@ -28,18 +28,18 @@ public final class Mission {
 
     public String startMission() {
         if (completed) {
-            return "This mission was already completed.";
+            return "Esta missão já foi concluída.";
         }
         inProgress = true;
-        return "Mission started: " + name + " (" + difficulty + ").";
+        return "Missão iniciada: " + name + " (" + difficulty + ").";
     }
 
     public String completeMission() {
         if (!inProgress) {
-            return "Start the mission before completing it.";
+            return "Inicie a missão antes de concluí-la.";
         }
         inProgress = false;
         completed = true;
-        return "Mission completed: " + name + ". Reward: " + goldReward + " gold.";
+        return "Missão concluída: " + name + ". Recompensa: " + goldReward + " ouros.";
     }
 }

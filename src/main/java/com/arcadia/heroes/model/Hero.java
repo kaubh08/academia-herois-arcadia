@@ -49,12 +49,12 @@ public abstract class Hero {
 
     /** First overloaded attack operation: a basic attack without a target. */
     public String attack() {
-        return name + " performs a basic attack.";
+        return name + " realiza um ataque básico.";
     }
 
     /** Second overloaded attack operation: an attack directed at another hero. */
     public String attack(Hero target) {
-        return name + " attacks " + target.getName() + ".";
+        return name + " ataca " + target.getName() + ".";
     }
 
     public abstract String getHeroClass();
@@ -64,7 +64,7 @@ public abstract class Hero {
     public abstract String useSpecialAbility();
 
     public String getDetails() {
-        return "Name: %s | Class: %s | Level: %d | Health: %d | Mana: %d"
+        return "Nome: %s | Classe: %s | Nível: %d | Vida: %d | Mana: %d"
                 .formatted(name, getHeroClass(), level, health, mana);
     }
 }

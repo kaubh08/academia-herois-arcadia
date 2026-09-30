@@ -13,7 +13,7 @@ public final class Mage extends Hero {
 
     @Override
     public String getHeroClass() {
-        return "Mage";
+        return "Mago";
     }
 
     @Override
@@ -23,12 +23,12 @@ public final class Mage extends Hero {
 
     @Override
     public String useSpecialAbility() {
-        return getName() + " casts Arcane Storm.";
+        return getName() + " lança Tempestade Arcana.";
     }
 
     @Override
     public String getDetails() {
-        return super.getDetails() + " | Magic Power: %d | Intelligence: %d"
+        return super.getDetails() + " | Poder Mágico: %d | Inteligência: %d"
                 .formatted(magicPower, intelligence);
     }
 }

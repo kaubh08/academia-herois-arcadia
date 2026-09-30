@@ -22,7 +22,7 @@ public final class ConsoleMenu {
         int option;
         do {
             printMenu();
-            option = readInt("Choose an option: ");
+            option = readInt("Escolha uma opção: ");
             switch (option) {
                 case 1 -> registerHero();
                 case 2 -> listHeroes();
@@ -31,79 +31,79 @@ public final class ConsoleMenu {
                 case 5 -> startMission();
                 case 6 -> completeMission();
                 case 0 -> System.out.println(academy.createKingdomReport());
-                default -> System.out.println("Invalid option.");
+                default -> System.out.println("Opção inválida.");
             }
         } while (option != 0);
     }
 
     private void printMenu() {
         System.out.println("""
-                \n=== ARCADIA HEROES ACADEMY ===
-                1 - Register hero
-                2 - List heroes
-                3 - Find hero by name
-                4 - Show general statistics
-                5 - Start mission
-                6 - Complete mission
-                0 - Exit and show kingdom report
+                \n=== ACADEMIA DE HERÓIS DE ARCÁDIA ===
+                1 - Cadastrar herói
+                2 - Listar heróis
+                3 - Buscar herói pelo nome
+                4 - Exibir estatísticas gerais
+                5 - Iniciar missão
+                6 - Concluir missão
+                0 - Sair e exibir relatório do reino
                 """);
     }
 
     private void registerHero() {
         if (academy.getHeroes().length == HeroAcademy.MAX_HEROES) {
-            System.out.println("The academy has reached its maximum of 20 heroes.");
+            System.out.println("A academia atingiu o limite máximo de 20 heróis.");
             return;
         }
-        String name = readNonBlank("Name: ");
-        int level = readPositiveInt("Level: ");
-        int health = readPositiveInt("Health: ");
+        String name = readNonBlank("Nome: ");
+        int level = readPositiveInt("Nível: ");
+        int health = readPositiveInt("Vida: ");
         int mana = readNonNegativeInt("Mana: ");
-        int heroType = readInt("Class (1-Warrior, 2-Mage, 3-Archer): ");
+        int heroType = readInt("Classe (1-Guerreiro, 2-Mago, 3-Arqueiro): ");
         Hero hero = switch (heroType) {
             case 1 -> new Warrior(name, level, health, mana,
-                    readPositiveInt("Strength: "), readPositiveInt("Resistance: "), readPositiveInt("Energy: "));
+                    readPositiveInt("Força: "), readPositiveInt("Resistência: "), readPositiveInt("Energia: "));
             case 2 -> new Mage(name, level, health, mana,
-                    readPositiveInt("Magic power: "), readPositiveInt("Intelligence: "));
+                    readPositiveInt("Poder mágico: "), readPositiveInt("Inteligência: "));
             case 3 -> new Archer(name, level, health, mana,
-                    readPositiveInt("Precision: "), readPositiveInt("Agility: "), readPositiveInt("Concentration: "));
+                    readPositiveInt("Precisão: "), readPositiveInt("Agilidade: "), readPositiveInt("Concentração: "));
             default -> null;
         };
         if (hero == null) {
-            System.out.println("Invalid hero class.");
+            System.out.println("Classe de herói inválida.");
         } else if (academy.registerHero(hero)) {
-            System.out.println("Hero registered successfully.");
+            System.out.println("Herói cadastrado com sucesso.");
         } else {
-            System.out.println("A hero with this name already exists.");
+            System.out.println("Já existe um herói com este nome.");
         }
     }
 
     private void listHeroes() {
         Hero[] heroes = academy.getHeroes();
         if (heroes.length == 0) {
-            System.out.println("No registered heroes.");
+            System.out.println("Não há heróis cadastrados.");
             return;
         }
         for (Hero hero : heroes) {
             System.out.println(hero.getDetails());
-            System.out.println("Strength score: " + hero.calculateStrength());
+            System.out.println("Pontuação de força: " + hero.calculateStrength());
             System.out.println(hero.useSpecialAbility());
         }
     }
 
     private void findHero() {
-        Hero hero = academy.findHeroByName(readNonBlank("Hero name: "));
-        System.out.println(hero == null ? "Hero not found." : hero.getDetails());
+        Hero hero = academy.findHeroByName(readNonBlank("Nome do herói: "));
+        System.out.println(hero == null ? "Herói não encontrado." : hero.getDetails());
     }
 
     private void startMission() {
-        String heroName = readNonBlank("Hero name: ");
-        Mission mission = new Mission(readNonBlank("Mission name: "), readNonBlank("Difficulty: "),
-                readNonNegativeInt("Gold reward: "));
+        String heroName = readNonBlank("Nome do herói: ");
+        Mission mission = new Mission(readNonBlank("Nome da missão: "), readNonBlank("Dificuldade: "),
+                readNonNegativeInt("Recompensa em ouro: "));
         System.out.println(academy.assignAndStartMission(heroName, mission));
     }
 
     private void completeMission() {
-        System.out.println(academy.completeMission(readNonBlank("Hero name: ")));
+        System.out.println(academy.completeMission(readNonBlank("Nome do herói: ")));
     }
 
     private int readPositiveInt(String label) {
@@ -111,7 +111,7 @@ public final class ConsoleMenu {
         do {
             value = readInt(label);
             if (value <= 0) {
-                System.out.println("Enter a value greater than zero.");
+                System.out.println("Informe um valor maior que zero.");
             }
         } while (value <= 0);
         return value;
@@ -122,7 +122,7 @@ public final class ConsoleMenu {
         do {
             value = readInt(label);
             if (value < 0) {
-                System.out.println("Enter zero or a positive value.");
+                System.out.println("Informe zero ou um valor positivo.");
             }
         } while (value < 0);
         return value;
@@ -135,7 +135,7 @@ public final class ConsoleMenu {
             try {
                 return Integer.parseInt(input);
             } catch (NumberFormatException exception) {
-                System.out.println("Enter a valid whole number.");
+                System.out.println("Informe um número inteiro válido.");
             }
         }
     }
@@ -147,7 +147,7 @@ public final class ConsoleMenu {
             if (!value.isEmpty()) {
                 return value;
             }
-            System.out.println("This field is required.");
+            System.out.println("Este campo é obrigatório.");
         }
     }
 }

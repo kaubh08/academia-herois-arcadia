@@ -43,10 +43,10 @@ public final class HeroAcademy {
     public String assignAndStartMission(String heroName, Mission mission) {
         Hero hero = findHeroByName(heroName);
         if (hero == null) {
-            return "Hero not found.";
+            return "Herói não encontrado.";
         }
         if (!hero.assignMission(mission)) {
-            return "This hero already has a mission in progress.";
+            return "Este herói já possui uma missão em andamento.";
         }
         return hero.getName() + ": " + mission.startMission();
     }
@@ -54,7 +54,7 @@ public final class HeroAcademy {
     public String completeMission(String heroName) {
         Hero hero = findHeroByName(heroName);
         if (hero == null || hero.getActiveMission() == null) {
-            return "Hero or active mission not found.";
+            return "Herói ou missão ativa não encontrado.";
         }
         Mission mission = hero.getActiveMission();
         String result = mission.completeMission();
@@ -88,22 +88,22 @@ public final class HeroAcademy {
         }
 
         double averageLevel = heroCount == 0 ? 0 : (double) totalLevel / heroCount;
-        String strongestName = strongestHero == null ? "None" : strongestHero.getName();
+        String strongestName = strongestHero == null ? "Nenhum" : strongestHero.getName();
         return """
-                ========= KINGDOM REPORT =========
-                Total Heroes: %d
+                ========= RELATÓRIO DO REINO =========
+                Total de Heróis: %d
 
-                Warriors: %d
-                Mages: %d
-                Archers: %d
+                Guerreiros: %d
+                Magos: %d
+                Arqueiros: %d
 
-                Average Level: %.2f
-                Strongest Hero: %s
-                Completed Missions: %d
+                Média de nível: %.2f
+                Herói mais forte: %s
+                Missões concluídas: %d
                 """.formatted(heroCount, warriors, mages, archers, averageLevel, strongestName, completedMissions);
     }
 
     public String getGeneralStatistics() {
-        return "Registered heroes: " + heroCount + "/" + MAX_HEROES + System.lineSeparator() + createKingdomReport();
+        return "Heróis cadastrados: " + heroCount + "/" + MAX_HEROES + System.lineSeparator() + createKingdomReport();
     }
 }

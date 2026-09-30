@@ -15,7 +15,7 @@ public final class Archer extends Hero {
 
     @Override
     public String getHeroClass() {
-        return "Archer";
+        return "Arqueiro";
     }
 
     @Override
@@ -25,12 +25,12 @@ public final class Archer extends Hero {
 
     @Override
     public String useSpecialAbility() {
-        return getName() + " fires a Piercing Arrow.";
+        return getName() + " dispara uma Flecha Perfurante.";
     }
 
     @Override
     public String getDetails() {
-        return super.getDetails() + " | Precision: %d | Agility: %d | Concentration: %d"
+        return super.getDetails() + " | Precisão: %d | Agilidade: %d | Concentração: %d"
                 .formatted(precision, agility, concentration);
     }
 }

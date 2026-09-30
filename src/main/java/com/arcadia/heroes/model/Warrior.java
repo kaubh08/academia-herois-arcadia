@@ -15,7 +15,7 @@ public final class Warrior extends Hero {
 
     @Override
     public String getHeroClass() {
-        return "Warrior";
+        return "Guerreiro";
     }
 
     @Override
@@ -25,12 +25,12 @@ public final class Warrior extends Hero {
 
     @Override
     public String useSpecialAbility() {
-        return getName() + " uses Shield Break.";
+        return getName() + " usa Quebra de Escudo.";
     }
 
     @Override
     public String getDetails() {
-        return super.getDetails() + " | Strength: %d | Resistance: %d | Energy: %d"
+        return super.getDetails() + " | Força: %d | Resistência: %d | Energia: %d"
                 .formatted(strength, resistance, energy);
     }
 }
